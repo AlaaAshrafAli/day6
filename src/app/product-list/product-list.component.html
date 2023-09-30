@@ -1,0 +1,17 @@
+<div class="product-list">
+    <div *ngFor="let product of products" class="product-card">
+      <div class="product-image">
+        <img [src]="product.image" alt="{{ product.name }}">
+      </div>
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p class="product-price">Price: {{ product.price | currency?<div class=""></div>:'EGP':'symbol':'1.2-2' }}
+
+        <div class="product-rating">
+          <span class="star" *ngFor="let star of product.rating; let i = index">&#9733;</span>
+        </div>
+        <button (click)="addToCart(product)" class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  

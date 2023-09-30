@@ -1,0 +1,18 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+    <div *ngIf="registrationForm.get('email')?.hasError ('required')">
+      Email is required.
+    </div>
+    <div *ngIf="registrationForm.get('email')?.hasError ('email')">
+      Invalid email format.
+    </div>
+  </div>
+
+  <!-- Add similar form controls for name, username, password, and confirm password -->
+
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+  
